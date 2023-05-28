@@ -3,6 +3,8 @@
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 @keyframes gradient {
@@ -15,4 +17,9 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+.footer{
+    width: 33%;
+    text-align: center;
 }
