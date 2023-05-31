@@ -80,7 +80,7 @@
   </div>
   </footer>
 <!-- Formulario agregar -->
-<div class="modal fade" id="modalCreate" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+<div class="modal fade" id="modalAdd" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -88,11 +88,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modal-body-bar">
-        <form id="addForm">
+        <form id="formAdd">
           <div class="mb-3">
             <label for="" class="form-label">Cedula</label>
             <input type="text"
-              class="form-control" name="cedulaAdd" id="cedulaAdd"  placeholder="Ingresa el cedula del curso">
+              class="form-control" name="cedulaAdd" id="cedulaAdd"  placeholder="Ingresa el cedula del estudiante">
           </div>
           <div class="mb-3">
             <label for="" class="form-label">Correo Electronico</label>
@@ -152,11 +152,7 @@
             <input type="text"
               class="form-control" name="idCarrerasAdd" id="idCarrerasAdd"  placeholder="Ingresa id Carrera">
           </div>
-            <div class="mb-3">
-              <label for="" class="form-label">Usuario</label>
-              <input type="text"
-                class="form-control" name="usuarioAdd" id="usuarioAdd"  placeholder="Ingresa el usuario del ">
-            </div>
+           
             <div class="mb-3"  >
               <button type="submit" class="btn btn-primary">Insertar</button>
               <button type="reset"  class="btn btn-danger">Borrar</button>
@@ -173,7 +169,7 @@
 
 
   <!-- FORMULARIO EDITAR -->
-  <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+  <div class="modal fade" id="modalEdit" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
   aria-labelledby="modalTitleId" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -182,7 +178,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modal-body-barm">
-        <form id="editForm">
+        <form id="formEdit">
           <input type="hidden" id="idEdit" name="idEdit">
           <!-- <input type="hidden" id="usuario" name="usuario"> -->
 
@@ -246,12 +242,11 @@
             <label for="idCarreras" class="form-label">Carreras</label>
             <input type="text"
               class="form-control" name="idCarrerasEdit" id="idCarrerasEdit"  placeholder="Ingresa id Carrera">
-            <small id="helpId" class="form-text text-muted">Selecciona una carrera</small>
           </div>
           <div class="mb-3">
             <label for="" class="form-label">Usuario</label>
             <input type="text" class="form-control" name="usuarioEdit" id="usuarioEdit" aria-describedby="helpId"
-              placeholder="Ingresa el usuario del estudiante">
+              placeholder="Ingresa el usuario del estudiante" disabled>
           </div>
           <div class="mb-3" >
             <button type="submit" class="btn btn-primary">Modificar</button>
@@ -282,7 +277,7 @@ role="dialog" aria-labelledby="Eliminar" aria-hidden="true">
 
       <h5>¿Realmente desea eliminar este registro?</h5>
       <br>
-      <form id="formulario">
+      <form id="formDelete">
         <div class="mb-3">
           <label for="" class="form-label">Id</label>
           <input type="text" class="form-control" name="idDelete" id="idDelete"
@@ -335,10 +330,10 @@ role="dialog" aria-labelledby="Eliminar" aria-hidden="true">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
-  <script src="JS/listStudents.js"></script>
-  <script src="JS/addStudents.js"></script>
-  <script src="JS/editStudents.js"></script>
-  <script src="JS/deleteStudents.js"></script>
+  <script src="JS/Students/listStudents.js"></script>
+  <script src="JS/Students/addStudents.js"></script>
+  <script src="JS/Students/editStudents.js"></script>
+  <script src="JS/Students/deleteStudents.js"></script>
 
   <script src="JS/menu.js">
    </script>

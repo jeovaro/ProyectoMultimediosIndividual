@@ -24,11 +24,44 @@
     
   </header>
 
-  <main>
-    <div class="container-fluid gradient-background">
-        <h2>Main</h2>
-    </div>
-  </main>
+  <div class="container-fluid gradient-background">
+    <button type="button" class="btn btn-info btn-lg" onclick="showModalAdd()">
+      Ingresar Profesor
+    </button>
+        <div class="table-responsive gradient-background">
+          <table class="table table-striped
+          table-hover	
+          table-borderless
+          table-primary
+          align-middle">
+              <thead class="table-light">
+                  <tr>
+                      <th>Id</th>
+                      <th>Cedula</th>
+                      <th>Email</th>
+                      <th>Telefono</th>
+                      <th>Celular</th>
+                      <th>Fecha Nacimiento</th>
+                      <th>Sexo</th>
+                      <th>Direccion</th>
+                      <th>Nombre</th>
+                      <th>Apellido Paterno</th>
+                      <th>Apellido Materno</th>
+                      <th>Id Carrera</th>
+                      <th>Usuario</th>
+                      <th>Nacionalidad</th>
+                  </tr>
+                  </thead>
+                  <tbody class="table-group-divider" id="resultados">
+                                                              
+                  </tbody>
+                  <tfoot>
+                      
+                  </tfoot>
+          </table>            
+        </div>   
+  </div>
+</main>
 
   <footer>
     <div class="container-fluid">
@@ -46,6 +79,245 @@
   </div>
   </footer>
 
+  <!-- Formulario agregar -->
+<div class="modal fade" id="modalAddP" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="modalTitleId">Insertar Profesor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body-bar">
+        <form id="formAdd">
+          <div class="mb-3">
+            <label for="" class="form-label">Cedula</label>
+            <input type="text"
+              class="form-control" name="cedulaAdd" id="cedulaAdd"  placeholder="Ingresa el cedula del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Correo Electronico</label>
+            <input type="email"
+              class="form-control" name="correoelectronicoAdd" id="correoelectronicoAdd"  placeholder="Ingresa la correo electronico del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Telefono</label>
+            <input type="text"
+              class="form-control" name="telefonoAdd" id="telefonoAdd"  placeholder="Ingresa el telefono del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Telefono celular</label>
+            <input type="text"
+              class="form-control" name="telefonocelularAdd" id="telefonocelularAdd"  placeholder="Ingresa el telefono celular del profesor">
+
+          </div>
+
+          <div class="mb-3">
+            <label for="" class="form-label">Fecha de nacimiento</label>
+            <input type="date"
+              class="form-control" name="fechanacimientoAdd" id="fechanacimientoAdd"  placeholder="Ingresa el fecha de nacimiento del profesor">
+
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Sexo</label>
+            <input type="text"
+              class="form-control" name="sexoAdd" id="sexoAdd"  placeholder="Ingresa el sexo del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Direccion</label>
+            <input type="text"
+              class="form-control" name="direccionAdd" id="direccionAdd"  placeholder="Ingresa el direccion del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Nombre</label>
+            <input type="text"
+              class="form-control" name="nombreAdd" id="nombreAdd"  placeholder="Ingresa el nombre del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Apellido paterno</label>
+            <input type="text"
+              class="form-control" name="apellidopaternoAdd" id="apellidopaternoAdd"  placeholder="Ingresa el apellido paterno del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Apellido materno</label>
+            <input type="text"
+              class="form-control" name="apellidomaternoAdd" id="apellidomaternoAdd"  placeholder="Ingresa el apellido materno del profesor">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Carreras</label>
+            <input type="text"
+              class="form-control" name="idCarrerasAdd" id="idCarrerasAdd"  placeholder="Ingresa id Carrera">
+          </div>
+           
+            <div class="mb-3">
+              <label for="" class="form-label">Nacionalidad</label>
+              <input type="text"
+                class="form-control" name="nacionalidadAdd" id="nacionalidadAdd"  placeholder="Ingresa la nacionalidad del profesor">
+            </div>
+            <div class="mb-3"  >
+              <button type="submit" class="btn btn-primary">Insertar</button>
+              <button type="reset"  class="btn btn-danger">Borrar</button>
+              
+            </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- FORMULARIO EDITAR -->
+ <div class="modal fade" id="modalEditP" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+ aria-labelledby="modalTitleId" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title text-dark" id="modalTitleId">Modificar Estudiante</h5>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="modal-body" id="modal-body-barm">
+       <form id="formEditP">
+         <input type="hidden" id="idEdit" name="idEdit">
+         <!-- <input type="hidden" id="usuario" name="usuario"> -->
+
+         <div class="mb-3">
+           <label for="" class="form-label">Cedula</label>
+           <input type="text" class="form-control" name="cedulaEdit" id="cedulaEdit" aria-describedby="helpId"
+             placeholder="Ingresa la cedula del profesor">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Correo Electronico</label>
+           <input type="email" class="form-control" name="correoelectronicoEdit" id="correoelectronicoEdit" aria-describedby="helpId"
+             placeholder="Ingresa el correo electronico del profesor">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Telefono</label>
+           <input type="text" class="form-control" name="telefonoEdit" id="telefonoEdit" aria-describedby="helpId"
+             placeholder="Ingresa el telefono del profesor">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Telefono Celular</label>
+           <input type="text" class="form-control" name="telefonocelularEdit" id="telefonocelularEdit" aria-describedby="helpId"
+             placeholder="Ingresa el telefono celular del profesor">
+         </div>
+
+         <div class="mb-3">
+           <label for="" class="form-label">Fecha de Nacimiento</label>
+           <input type="date" class="form-control" name="fechanacimientoEdit" id="fechanacimientoEdit" aria-describedby="helpId"
+             placeholder="Ingresa la fecha de nacimiento del profesor ">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Sexo</label>
+           <input type="text" class="form-control" name="sexoEdit" id="sexoEdit" aria-describedby="helpId"
+             placeholder="Ingresa el sexo del profesor">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Direccion</label>
+           <input type="text" class="form-control" name="direccionEdit" id="direccionEdit" aria-describedby="helpId"
+             placeholder="Ingresa la direccion del profesor">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Nombre</label>
+           <input type="text" class="form-control" name="nombreEdit" id="nombreEdit" aria-describedby="helpId"
+             placeholder="Ingresa el nombre del profesor">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Apellido paterno</label>
+           <input type="text" class="form-control" name="apellidopaternoEdit" id="apellidopaternoEdit" aria-describedby="helpId"
+             placeholder="Ingresa el apellido paterno del profesor">
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Apellido Materno</label>
+           <input type="text" class="form-control" name="apellidomaternoEdit" id="apellidomaternoEdit" aria-describedby="helpId"
+             placeholder="Ingresa el apellido materno del profesor">
+         </div> 
+         <div class="mb-3">
+           <label for="idCarreras" class="form-label">Carreras</label>
+           <input type="text"
+             class="form-control" name="idCarrerasEdit" id="idCarrerasEdit"  placeholder="Ingresa id Carrera">
+           <small id="helpId" class="form-text text-muted">Selecciona una carrera</small>
+         </div>
+         <div class="mb-3">
+           <label for="" class="form-label">Usuario</label>
+           <input type="text" class="form-control" name="usuarioEdit" id="usuarioEdit" aria-describedby="helpId"
+             placeholder="Ingresa el usuario del profesor" disabled>
+         </div>
+         <div class="mb-3">
+          <label for="" class="form-label">Nacionalidad</label>
+          <input type="text" class="form-control" name="nacionalidadEdit" id="nacionalidadEdit" aria-describedby="helpId"
+            placeholder="Ingresa la nacionalidad del profesor">
+        </div>
+         <div class="mb-3" >
+           <button type="submit" class="btn btn-primary">Modificar</button>
+           <button type="reset"  class="btn btn-danger">Borrar</button>
+         </div>
+         
+       </form>
+     </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+       </div>
+   </div>
+ </div>
+</div>
+
+<!-- FORMULARIO ELIMINAR -->
+
+
+<div class="modal fade" id="modalDeleteP" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+role="dialog" aria-labelledby="Eliminar" aria-hidden="true">
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title text-dark" id="Eliminar">Eliminar Estudiante</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+
+      <h5>¿Realmente desea eliminar este registro?</h5>
+      <br>
+      <form id="formDeleteP">
+        <div class="mb-3">
+          <label for="" class="form-label">Id</label>
+          <input type="text" class="form-control" name="idDelete" id="idDelete"
+            aria-describedby="helpId" placeholder="Ingresa el nombre del estudiante" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Cedula</label>
+            <input type="text" class="form-control" name="cedulaDelete" id="cedulaDelete"
+              aria-describedby="helpId" placeholder="Ingresa el nombre del estudiante" disabled>
+          </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input type="text" class="form-control" name="nombreDelete" id="nombreDelete"
+            aria-describedby="helpId" placeholder="Ingresa el nombre del estudiante" disabled>
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Apellido Paterno</label>
+          <input type="text" class="form-control" name="apellidopaternoDelete" id="apellidopaternoDelete"
+            aria-describedby="helpId" placeholder="Ingresa el nombre del estudiante" disabled>
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Apellido Materno</label>
+          <input type="text" class="form-control" name="apellidomaternoDelete" id="apellidomaternoDelete"
+            aria-describedby="helpId" placeholder="Ingresa el nombre del estudiante" disabled>
+        </div>
+
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" onclick="deleteProffessor()">Aceptar</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+</div>
 
 
   <!-- Bootstrap JavaScript Libraries -->
@@ -58,6 +330,10 @@
   </script>
 
   <script src="JS/menu.js"> </script>
+  <script src="JS/Proffesors/listProffessors.js"> </script>
+  <script src="JS/Proffesors/addProffessors.js"> </script>
+  <script src="JS/Proffesors/editProffessors.js"> </script>
+  <script src="JS/Proffesors/deleteProffessors.js"> </script>
 </body>
 
 </html>

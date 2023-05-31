@@ -1,5 +1,5 @@
-let formularioEstudiante = document.getElementById('addForm');
-const addStudent = new bootstrap.Modal(document.getElementById('modalCreate'));
+let formularioEstudiante = document.getElementById('formAdd');
+const addStudent = new bootstrap.Modal(document.getElementById('modalAdd'));
 
 function showModalAdd(){
     addStudent.show();
@@ -43,7 +43,7 @@ fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
     if (response.ok) {
       alert("Datos Agregados correctamente.");
       addStudent.hide(); // Oculta el modal
-      
+     
       contenidoTablaResultado.innerHTML = ""; // Limpia el contenido de la tabla
       cargarDatos(); // Vuelve a cargar los datos actualizados
 

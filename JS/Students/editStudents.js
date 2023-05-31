@@ -1,4 +1,4 @@
-const editStudent = new bootstrap.Modal(document.getElementById('modalId'))
+const editStudent = new bootstrap.Modal(document.getElementById('modalEdit'))
 
 
 function editarEstudiante(id, cedula, correoelectronico, telefono, telefonocelular,fechanacimiento,sexo,
@@ -20,7 +20,7 @@ function editarEstudiante(id, cedula, correoelectronico, telefono, telefonocelul
     document.getElementById("usuarioEdit").value = usuario;
   }
 
-  let formularioEditar = document.getElementById('editForm'); 
+  let formularioEditar = document.getElementById('formEdit'); 
   formularioEditar.addEventListener('submit', function(e){
     e.preventDefault();
     // Obtener los valores de los campos de entrada

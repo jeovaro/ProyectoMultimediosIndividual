@@ -36,7 +36,7 @@ function steTabla(datos){
                             '${valor.nombre}',
                             '${valor.apellidopaterno}',
                             '${valor.apellidomaterno}'
-                            )" role="button">Borrar</a>
+                            )" role="button">Eliminar</a>
                           ||
                           <a name="" id="" class="btn btn-primary" onclick="editarEstudiante(
                                 '${valor.id}',
@@ -53,7 +53,7 @@ function steTabla(datos){
                                 '${valor.nacionalidad}',
                                 '${valor.idCarreras}',
                                 '${valor.usuario}'
-                               )" role="button">MODI</a>
+                               )" role="button">Modificar</a>
                                
                         </td>
                     </tr>`; 
@@ -61,6 +61,6 @@ function steTabla(datos){
 }
 
 
-    
+
 
     
